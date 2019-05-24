@@ -1,0 +1,42 @@
+extend layout/_core
+
+block head
+  +head(head.giapha)
+
+block body
+  main.family-tree
+    .container-fluid.family-tree__main
+      .row.no-gutters
+        .col-12.family-tree__board.board
+          .board__image-wrapper
+            img.board__image(src='../images/board.png')
+        .row.no-gutters.family-tree.tree
+            .col-12.no-gutters.tree__level-1
+              .text-center
+                img.tree__logo(src='../images/flower.png')
+              +ancestor-tree(level1)
+            .col-12.no-gutters.tree__level-2
+              +ancestor-tree(level2)
+            .col-12.no-gutters.tree__level-3
+              +ancestor-tree(level3)
+            .col-12.no-gutters.tree__level-4
+              +ancestor-tree(level4)
+            .col-12.no-gutters.tree__level-5
+              +ancestor-tree(level5)
+            .col-12.no-gutters.tree__level-6
+              +ancestor-tree(level6, last = true)
+    .modal.fade(tabindex='-1' role='dialog' id='name-modal')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5.modal-title Tiểu sử
+            button.close(data-dismiss='modal' aria-label='Close')
+              span(aria-hidden="true") &times;
+          .modal-body
+            p.modal-name
+            .modal-info
+              p
+                | Nguyễn Phú Trọng (sinh 14 tháng 4 năm 1944) là chính trị gia người Việt Nam. Ông hiện là Tổng Bí thư Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Chủ tịch nước Cộng hòa xã hội chủ nghĩa Việt Nam, Đại biểu Quốc hội Việt Nam khóa XIV nhiệm kì 2016–2021, thuộc đoàn đại biểu quốc hội thành phố Hà Nội. Trong Đảng Cộng sản Việt Nam, ông hiện là Bí thư Quân ủy Trung ương, Ủy viên Thường vụ Đảng ủy Công an Trung ương và Trưởng Ban Chỉ đạo Trung ương về phòng, chống tham nhũng. 
+                | Ngày 3 tháng 10 năm 2018, Nguyễn Phú Trọng được Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam thống nhất giới thiệu Quốc hội bầu làm Chủ tịch nước. Sau khi được Quốc hội Việt Nam khóa 14 bầu làm Chủ tịch nước vào ngày 23 tháng 10 năm 2018, ông là chính khách thứ ba trong lịch sử Đảng Cộng sản Việt Nam nắm giữ cả hai chức vụ đứng đầu Đảng Cộng sản cầm quyền và Nhà nước, sau Hồ Chí Minh và Trường Chinh.[1]
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-dismiss='modal') Đóng

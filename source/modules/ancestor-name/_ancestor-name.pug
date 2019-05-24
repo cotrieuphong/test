@@ -1,0 +1,15 @@
+mixin ancestor-tree(data, last)
+  each person in data
+    if last
+      
+      .tree__item
+        .tree__info
+          h3.tree__title=person.title
+          p.tree__name=person.name
+          p.tree__name=person.name
+    else
+    
+      .tree__item
+        .tree__info
+          h3.tree__title=person.title
+          p.tree__name=person.name

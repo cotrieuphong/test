@@ -1,0 +1,12 @@
+include ../modules/page-list/_page-list
+include ../modules/ancestor-name/_ancestor-name
+include ../modules/_plugins
+include ../modules/head/_head
+
+doctype html
+html(lang="en")
+  head
+    block head
+  body
+    block body
+    +plugins()
